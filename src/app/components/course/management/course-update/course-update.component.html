@@ -1,0 +1,60 @@
+<fieldset class="border p-2 container" style="margin-top: 3%">
+  <legend class="w-auto text-base">Nuevo Curso</legend>
+  <form class="row g-3">
+    <div class="col-12">
+      <label for="inputCourseName" class="form-label">Nombre</label>
+      <input id="inputCourseName"
+             name="inputCourseName"
+             type="text"
+             class="form-control"
+             placeholder="Ingrese el nombre del curso"
+             [(ngModel)]="formCreation.courseName"
+             autofocus
+             required>
+    </div>
+    <div class="col-12">
+      <label for="inputCourseResume" class="form-label">Resumen</label>
+      <textarea type="text"
+                class="form-control"
+                id="inputCourseResume"
+                name="inputCourseResume"
+                cols="12"
+                rows="4"
+                [(ngModel)]="formCreation.courseResume" required></textarea>
+    </div>
+    <div class="col-12">
+      <label for="inputCourseAuthor" class="form-label">Autor</label>
+      <input type="text"
+             class="form-control"
+             id="inputCourseAuthor"
+             name="inputCourseAuthor"
+             placeholder="Ingrese el autor del curso"
+             [(ngModel)]="formCreation.courseAuthor"
+      >
+    </div>
+    <div class="row justify-content-md-center mt-3">
+      <div class="col-md-6">
+        <label class="form-label">Imagen</label>
+        <img [src]="this.srcResult" alt="" class="img-fluid" style="min-width: 100% !important; max-height: 80%">
+        <input type="file" hidden #inputFile (change)="select()">
+        <button
+          type="button"
+          class="btn-block btn btn-outline-primary"
+          style="min-width: 100%"
+          (click)="inputFile.click()"
+        >
+          Cargar
+        </button>
+      </div>
+    </div>
+    <div class="col-12">
+      <button class="btn btn-primary"
+              style="float: right"
+              (click)="save()"
+      >Guardar</button>
+    </div>
+  </form>
+
+</fieldset>
+
+

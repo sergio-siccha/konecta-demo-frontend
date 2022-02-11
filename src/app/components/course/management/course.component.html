@@ -1,0 +1,39 @@
+<div style="margin: 20px">
+  <div style="width: 93%;">
+    <button type="button"
+            class="btn btn-primary"
+            style="float: left"
+            (click)="newRegister()"
+    >Nuevo Registro</button>
+  </div>
+  <table class="table">
+    <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Resumen</th>
+      <th scope="col">Autor</th>
+      <th scope="col">Ultimo Cambio</th>
+      <th scope="col">Opciones</th>
+    </tr>
+    </thead>
+    <tbody *ngIf="courses?.length !== 0">
+    <tr *ngFor="let course of courses; let i = index">
+      <td>{{i + 1}}</td>
+      <td>{{course.courseName}}</td>
+      <td>{{course.courseResume}}</td>
+      <td>{{course.courseAuthor}}</td>
+      <td>{{course.updatedAt}}</td>
+      <td>
+        <button type="button"
+                class="btn btn-warning"
+                (click)="saveRegister(course, true)">Editar</button>
+        <button type="button"
+                class="btn btn-danger"
+                style="margin-left: 5px"
+                (click)="saveRegister(course, false)">Eliminar</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,18 @@
+input[type="radio"] {
+  display: none;
+}
+
+label {
+  color: grey;
+  font-size: 20px;
+}
+
+.punctuation {
+  direction: rtl;
+  unicode-bidi: bidi-override;
+}
+
+label:hover,
+label:hover ~ label {
+  color: orange;
+}
